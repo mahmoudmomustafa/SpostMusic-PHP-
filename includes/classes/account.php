@@ -38,7 +38,7 @@ class Account
     $result = mysqli_query($this->con, "INSERT INTO users " .
       "(name,email,password) " . "VALUES " .
       "('$name','$email','$encryptPass')");
-    return $result;  
+    return $result;
   }
   private function VaildateName($name)
   {
@@ -54,6 +54,11 @@ class Account
       return;
     }
     //check if email isnt exists
+    $sqlEmail = mysqli_query($this->con, "SELECT email FROM users WHERE email='$email'");
+    if (mysqli_num_rows($sqlEmail) != 0) {
+      array_push($this->errorArray, Constants::$emailTaken);
+      return;
+    }
   }
   private function VaildatePassword($password, $rePassword)
   {

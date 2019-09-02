@@ -48,6 +48,7 @@ include('includes/handler/register-handler.php');
                       <input id="email" type="email" class="form-control" placeholder="ex@test.com" name="email" required>
                       <!-- mail error -->
                       <?php echo $account->getError(Constants::$emailInvaild) ?>
+                      <?php echo $account->getError(Constants::$emailTaken) ?>
                     </div>
                   </div>
                   <!--user password -->
