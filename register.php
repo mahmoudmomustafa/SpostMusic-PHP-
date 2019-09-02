@@ -1,7 +1,8 @@
 <?php
+include('includes/config.php');
 include('includes/classes/account.php');
 include('includes/classes/Constants.php');
-$account = new Account();
+$account = new Account($con);
 include('includes/handler/register-handler.php');
 ?>
 <!DOCTYPE html>

@@ -2,9 +2,11 @@
 
 class Account
 {
+  private $con;
   private $errorArray;
-  public function __construct()
+  public function __construct($con)
   {
+    $this->con = $con;
     $this->errorArray = array();
   }
   public function register($name, $email, $password, $rePassword)
@@ -15,7 +17,7 @@ class Account
 
     if (empty($this->errorArray)) {
       //insert to db
-      return true;
+      return $this->insertUserData($name, $email, $password);
     } else {
       return false;
     }
@@ -26,8 +28,17 @@ class Account
       $error = '';
     }
     if (!empty($error)) {
-      return '<div class="alert alert-danger p-2 my-1" role="alert"><strong>'.$error.'</strong></div>';
+      return '<strong class="text-danger">' . $error . '</strong>';
     }
+  }
+  private function insertUserData($name, $email, $password)
+  {
+    $encryptPass = md5($password); //hash password user
+    $date = date("Y-m-d");
+    $result = mysqli_query($this->con, "INSERT INTO users " .
+      "(name,email,password) " . "VALUES " .
+      "('$name','$email','$encryptPass')");
+    return $result;  
   }
   private function VaildateName($name)
   {
