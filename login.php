@@ -1,4 +1,9 @@
-<?php include('includes/handler/login-handler.php'); ?>
+<?php 
+include('includes/config.php');
+include('includes/classes/account.php');
+include('includes/classes/Constants.php');
+$account = new Account($con);
+include('includes/handler/login-handler.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -31,9 +36,6 @@
                     <div class="col-md-6">
                       <input id="email" placeholder="ex@test.com" type="email" class="form-control" name="email" required autofocus>
                       <!-- email error -->
-                      <span class="invalid-feedback" role="alert">
-                        <strong></strong>
-                      </span>
                     </div>
                   </div>
                   <!--password -->
@@ -41,14 +43,10 @@
                     <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                     <div class="col-md-6">
                       <input id="password" placeholder="********" type="password" class="form-control" name="password" required autocomplete="none">
-                      <!-- password error -->
-                      <span class="invalid-feedback" role="alert">
-                        <strong></strong>
-                      </span>
+                      <?php echo $account->getError(Constants::$loginErr) ?>
                     </div>
                   </div>
-
-                  <div class="form-group row">
+                  <!-- <div class="form-group row">
                     <div class="col-md-6 offset-md-4">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember">
@@ -57,7 +55,7 @@
                         </label>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <!-- login submit -->
                   <div class="form-group row mb-0">
                     <div class="col-md-8 offset-md-4">

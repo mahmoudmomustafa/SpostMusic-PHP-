@@ -7,4 +7,6 @@ class Constants
   public static $passwordNotMatch = 'Password is not match.';
   public static $passInvaild = 'Password is Invaild.';
   public static $passChar = 'Password must be betwwen 5 to 25 Char.';
+  public static $loginErr = 'Email Or Password was incorrect';
+
 }

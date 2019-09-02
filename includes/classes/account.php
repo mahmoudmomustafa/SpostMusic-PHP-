@@ -22,6 +22,17 @@ class Account
       return false;
     }
   }
+  public function login($email, $password)
+  {
+    $password = md5($password);
+    $query = mysqli_query($this->con, "SELECT * FROM users WHERE email='$email' AND password='$password'");
+    if (mysqli_num_rows($query) == 1) {
+      return true;
+    } else {
+      array_push($this->errorArray, Constants::$loginErr);
+      return false;
+    }
+  }
   public function getError($error)
   {
     if (!in_array($error, $this->errorArray)) {
