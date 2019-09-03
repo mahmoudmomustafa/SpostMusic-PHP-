@@ -17,13 +17,32 @@ include('includes/handler/register-handler.php');
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Styles -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <link href="css/app.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
   <div id="app">
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg shadow">
+      <div class="container">
+        <!-- navbar brand -->
+        <a class="navbar-brand font-weight-bold" href="/"><i class="fas fa-headphones-alt pr-1 fa-lg"></i>SPOT<span>Music</span></a>
+        <!-- nav side -->
+        <div class="right-div" id="right-nav">
+          <ul class="nav ml-auto justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="/projects/SpotMusic/login.php">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="/projects/SpotMusic/register.php">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- main content -->
     <main class="py-4">
       <div class="container">
         <div class="row justify-content-center">
@@ -87,8 +106,8 @@ include('includes/handler/register-handler.php');
   </div>
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/script.js"></script>
+  <!-- <script src="js/app.js"></script>
+  <script src="js/script.js"></script> -->
 </body>
 
 </html>
