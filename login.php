@@ -50,10 +50,10 @@ include('includes/handler/login-handler.php'); ?>
               <img src="assets/img/log2.svg" class="img-fluid" alt="Responsive image">
               <div class="headings">
                 <h1 class="p-3 rounded fade-out">
-                  Welcome To <span class="font-weight-bold text-primary brand"><i class="lni-music size-md pr-1"></i>Spot<span>Music</span></span> 
+                  Welcome To <span class="font-weight-bold text-primary brand"><i class="lni-music size-md pr-1"></i>Spot<span>Music</span></span>
                 </h1>
                 <h2 class="p-3 rounded fade-out">
-                Login Or Register Now to listen to your Music<i class="size-sm pl-3 lni-fade-right-effect lni-angle-double-right"></i>
+                  Login Or Register Now to listen to your Music<i class="size-sm pl-3 lni-fade-right-effect lni-angle-double-right"></i>
                 </h2>
               </div>
             </div>
