@@ -11,15 +11,14 @@ include('includes/handler/register-handler.php');
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LogIn | SpotMusic</title>
+  <title>Register | SpotMusic</title>
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Styles -->
-  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-  <link href="css/app.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="assets/css/app.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -45,7 +44,7 @@ include('includes/handler/register-handler.php');
     <!-- main content -->
     <main class="py-4">
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">Register</div>
