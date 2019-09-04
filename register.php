@@ -11,7 +11,7 @@ include('includes/handler/register-handler.php');
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login | SpotMusic</title>
+  <title>Register | SpotMusic</title>
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -61,13 +61,12 @@ include('includes/handler/register-handler.php');
           </div>
           <div class="col-md-5 my-lg-5 mt-3">
             <div class="card h-100 shadow fade-out">
-              <div class="card-header font-weight-bold border-0 p-4">Login</div>
+              <div class="card-header font-weight-bold border-0 p-4">Register</div>
               <div class="card-body">
                 <form method="POST" action="register.php" id="register-form">
                   <!-- Name -->
                   <div class="form-group row">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
-                    <div class="col-md-6">
+                    <div class="col-md-9 m-auto">
                       <input id="name" type="text" class="form-control" name="name" placeholder="Full Name" required autofocus>
                       <!-- name error -->
                       <?php echo $account->getError(Constants::$nameChar) ?>
@@ -75,9 +74,8 @@ include('includes/handler/register-handler.php');
                   </div>
                   <!-- User mail-->
                   <div class="form-group row">
-                    <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-                    <div class="col-md-6">
-                      <input id="email" type="email" class="form-control" placeholder="ex@test.com" name="email" required>
+                    <div class="col-md-9 m-auto">
+                      <input id="email" type="email" class="form-control" placeholder="E-mail Address" name="email" required>
                       <!-- mail error -->
                       <?php echo $account->getError(Constants::$emailInvaild) ?>
                       <?php echo $account->getError(Constants::$emailTaken) ?>
@@ -85,9 +83,8 @@ include('includes/handler/register-handler.php');
                   </div>
                   <!--user password -->
                   <div class="form-group row">
-                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                    <div class="col-md-6">
-                      <input id="password" type="password" class="form-control" placeholder="********" name="password" required autocomplete="none">
+                    <div class="col-md-9 m-auto">
+                      <input id="password" type="password" class="form-control" placeholder="Password" name="password" required autocomplete="none">
                       <!-- pass error -->
                       <?php echo $account->getError(Constants::$passChar) ?>
                       <?php echo $account->getError(Constants::$passInvaild) ?>
@@ -96,15 +93,14 @@ include('includes/handler/register-handler.php');
                   </div>
                   <!-- confirm password -->
                   <div class="form-group row">
-                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                    <div class="col-md-6">
-                      <input id="password-confirm" type="password" class="form-control" placeholder="********" name="password_confirmation" required autocomplete="none">
+                    <div class="col-md-9 m-auto">
+                      <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required autocomplete="none">
                     </div>
                   </div>
                   <!-- submit btn -->
-                  <div class="form-group row mb-0">
-                    <div class="col-md-6 offset-md-4">
-                      <button type="submit" class="btn btn-primary" name="register-btn">
+                  <div class="form-group row">
+                    <div class="col-md-8 m-auto">
+                      <button type="submit" class="btn btn-primary w-100" name="register-btn">
                         Register
                       </button>
                     </div>
