@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Bree+Serif|Lobster|Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: whitesmoke;
+    background: linear-gradient(45deg, #111111, #2c3d4f);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* navbar */
+.navbar{
+    font-family: 'Acme', sans-serif;
+}
+.navbar .navbar-brand{
+    font-family: 'Lobster', cursive;
+}
+.navbar .navbar-brand span{
+    transition: 500ms ease;
+    font-size: smaller;
+    opacity: 0;
+}
+.navbar .navbar-brand:hover span{
+    opacity: 1;
+    color: rgb(146, 14, 40);
+}
+.navbar .right-div .nav .nav-item .nav-link{
+    color: rgb(238, 238, 238) !important
+}
+
+/* playnow */
+#play {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  font-family: 'Gayathri', sans-serif;
+}
+
+#play .card {
+  width: 100%;
+}
+
+#play .card .card-body .left .card-title,
+#play .card .card-body .left .card-text{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#play .card .card-body .right {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center
+}
+
+#play .card .card-body .center {
+  flex-grow: 2;
+}
+
+#play .card .card-body .left button,
+#play .card .card-body .center button,
+#play .card .card-body .right button {
+  background: transparent;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#play .card .card-body .left button:hover,
+#play .card .card-body .center button:hover,
+#play .card .card-body .right button:hover {
+  background-color: #161b21;
+  border-radius: 5px;
+}
+
+#play .card .card-body .center .play-progress .progress,
+#play .card .card-body .right .progress{
+  width: -webkit-fill-available;
+  margin: 8px 15px;
+  height: 5px;
+  background: #283747
+}
+#play .card .card-body .center .play-progress .progress .progress-bar,
+#play .card .card-body .right .progress .progress-bar{
+  background: #d7227a!important
+}
+#play .card .card-body .right {
+  display: inline-flex;
+  flex-grow: .5;
+}
+#play .card .card-body .right .progress{
+  width: calc(2vw + 70px);
+  margin: auto 1px;
+}
