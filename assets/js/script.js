@@ -7,23 +7,23 @@ $(document).ready(function () {
     //now playing functions
     //play & pause
     $('#play .card .card-body .center .play-navigate .playing').on('click', function () {
-        if ($('#play .card .card-body .center .play-navigate .playing img').attr('src') == 'img/play-button.svg') {
-            $('#play .card .card-body .center .play-navigate .playing img').attr('src', 'img/pause.svg');
+        if ($('#play .card .card-body .center .play-navigate .playing img').attr('src') == 'assets/img/nowPlaying/play-button.svg') {
+            $('#play .card .card-body .center .play-navigate .playing img').attr('src', 'assets/img/nowPlaying/pause.svg');
             $(this).attr('onclick', 'pauseSong()');
         } else {
-            $('#play .card .card-body .center .play-navigate .playing img').attr('src', 'img/play-button.svg');
+            $('#play .card .card-body .center .play-navigate .playing img').attr('src', 'assets/img/nowPlaying/play-button.svg');
             $(this).attr('onclick', 'playSong()');
         }
     });
     //mute & unmute
     $('#play .card .card-body .right .sound').on('click', function () {
-        if ($('#play .card .card-body .right .sound img').attr('src') == 'img/speaker.svg') {
+        if ($('#play .card .card-body .right .sound img').attr('src') == 'assets/img/nowPlaying/speaker.svg') {
             // change icon
-            $('#play .card .card-body .right .sound img').attr('src', 'img/mute.svg');
+            $('#play .card .card-body .right .sound img').attr('src', 'assets/img/nowPlaying/mute.svg');
             //change bar
             $('#play .card .card-body .right .progress .progress-bar').css('width', '0');
         } else {
-            $('#play .card .card-body .right .sound img').attr('src', 'img/speaker.svg');
+            $('#play .card .card-body .right .sound img').attr('src', 'assets/img/nowPlaying/speaker.svg');
             $('#play .card .card-body .right .progress .progress-bar').css('width', '100%');
         }
     });
