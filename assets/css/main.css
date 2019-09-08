@@ -1,33 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Acme|Bree+Serif|Lobster|Marcellus&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    color: whitesmoke;
-    background: linear-gradient(45deg, #111111, #2c3d4f);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  color: whitesmoke;
+  background: linear-gradient(45deg, #111111, #2c3d4f);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 /* navbar */
-.navbar{
-    font-family: 'Acme', sans-serif;
+.navbar {
+  font-family: 'Acme', sans-serif;
 }
-.navbar .navbar-brand{
-    font-family: 'Lobster', cursive;
+
+.navbar .navbar-brand {
+  font-family: 'Lobster', cursive;
 }
-.navbar .navbar-brand span{
-    transition: 500ms ease;
-    font-size: smaller;
-    opacity: 0;
+
+.navbar .navbar-brand span {
+  transition: 500ms ease;
+  font-size: smaller;
+  opacity: 0;
 }
-.navbar .navbar-brand:hover span{
-    opacity: 1;
-    color: rgb(146, 14, 40);
+
+.navbar .navbar-brand:hover span {
+  opacity: 1;
+  color: rgb(146, 14, 40);
 }
-.navbar .right-div .nav .nav-item .nav-link{
-    color: rgb(238, 238, 238) !important
+
+.navbar .right-div .nav .nav-item .nav-link {
+  color: rgb(238, 238, 238) !important
 }
 
 /* playnow */
@@ -43,11 +49,12 @@ body {
 }
 
 #play .card .card-body .left .card-title,
-#play .card .card-body .left .card-text{
+#play .card .card-body .left .card-text {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
+
 #play .card .card-body .right {
   flex-grow: 1;
   display: flex;
@@ -75,21 +82,24 @@ body {
 }
 
 #play .card .card-body .center .play-progress .progress,
-#play .card .card-body .right .progress{
+#play .card .card-body .right .progress {
   width: -webkit-fill-available;
   margin: 8px 15px;
   height: 5px;
   background: #283747
 }
+
 #play .card .card-body .center .play-progress .progress .progress-bar,
-#play .card .card-body .right .progress .progress-bar{
-  background: #d7227a!important
+#play .card .card-body .right .progress .progress-bar {
+  background: #d7227a !important
 }
+
 #play .card .card-body .right {
   display: inline-flex;
   flex-grow: .5;
 }
-#play .card .card-body .right .progress{
+
+#play .card .card-body .right .progress {
   width: calc(2vw + 70px);
   margin: auto 1px;
 }

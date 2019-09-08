@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Acme|Bree+Serif|Lobster|Marcellus&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -9,29 +10,35 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 /* navbar */
-.navbar{
+.navbar {
     font-family: 'Acme', sans-serif;
 }
-.navbar .navbar-brand{
+
+.navbar .navbar-brand {
     font-family: 'Lobster', cursive;
 }
-.navbar .navbar-brand span{
+
+.navbar .navbar-brand span {
     transition: 500ms ease;
     font-size: smaller;
     opacity: 0;
 }
-.navbar .navbar-brand:hover span{
+
+.navbar .navbar-brand:hover span {
     opacity: 1;
     color: rgb(146, 14, 40);
 }
-.navbar .right-div .nav .nav-item .nav-link{
+
+.navbar .right-div .nav .nav-item .nav-link {
     color: rgb(238, 238, 238) !important
 }
+
 /***************************/
 /* login and register page */
 /***************************/
-.container .col-md-7 .img .headings{
+.container .col-md-7 .img .headings {
     position: absolute;
     top: 0%;
     left: 10%;
@@ -40,45 +47,54 @@ body {
     color: #e7e7e7;
     text-shadow: 0 0 5px black;
 }
-.headings h1{
+
+.headings h1 {
     font-size: calc(1vw + 40px);
     background: #0000007a;
     text-indent: 1px
 }
-.headings h1 .brand{
+
+.headings h1 .brand {
     font-family: 'Lobster', cursive;
 }
-.headings h1 .brand span{
+
+.headings h1 .brand span {
     transition: 500ms ease;
     font-size: smaller;
     color: rgb(146, 14, 40);
 }
-.headings h2{
+
+.headings h2 {
     text-indent: 50px;
     font-size: calc(1vw + 20px);
     color: #3490db;
 }
+
 .fade-out {
-	-webkit-animation: fade-out 1s reverse both;
-	        animation: fade-out 1s reverse both;
+    -webkit-animation: fade-out 1s reverse both;
+    animation: fade-out 1s reverse both;
 }
+
 @-webkit-keyframes fade-out {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
+
     100% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
-  @keyframes fade-out {
+}
+
+@keyframes fade-out {
     0% {
-      opacity: 1;
+        opacity: 1;
     }
+
     100% {
-      opacity: 0;
+        opacity: 0;
     }
-  }
-  
+}
+
 /* form */
 .card {
     background-color: #1014198a;
@@ -90,7 +106,8 @@ body {
     font-size: calc(0vw + 25px);
     text-shadow: 0 0 5px black
 }
-.card .card-body .form-control{
+
+.card .card-body .form-control {
     border: 0;
     border-radius: 0;
     background: #181e26;
@@ -99,6 +116,7 @@ body {
     color: white;
     text-shadow: 0 0 5px black;
 }
+
 .card .card-body button {
     background: #111111;
     border-color: transparent;
