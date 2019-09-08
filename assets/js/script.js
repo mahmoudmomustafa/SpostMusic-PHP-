@@ -27,10 +27,10 @@ $(document).ready(function () {
             $('#play .card .card-body .right .progress .progress-bar').css('width', '100%');
         }
     });
-    var currentPlaylist = [];
-    setTrack(currentPlaylist[0], currentPlaylist, false);
 });
-console.log(currentPlaylist);
+
+var currentPlaying = [];
+var audioElement;
 
 function Audio() {
     this.currentPlaying;
@@ -46,27 +46,4 @@ function Audio() {
     this.pause = function () {
         this.audio.pause();
     }
-}
-
-var audioElement = new Audio();
-
-function setTrack(trackId, newPlaylist, play) {
-    $.getJSON('/getSong', {
-        songId: trackId
-    },function (data) {
-        console.log(data);
-        // audioElement.setTrack(data.path);
-        // audioElement.play();
-    });
-    if (play) {
-        audioElement.play();
-    }
-}
-
-function playSong() {
-    audioElement.play();
-}
-
-function pauseSong() {
-    audioElement.pause();
 }

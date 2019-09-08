@@ -1,5 +1,9 @@
 <?php
 include('includes/config.php');
+include('includes/classes/Album.php');
+include('includes/classes/Artist.php');
+include('includes/classes/Song.php');
+
 if (isset($_SESSION['userLogged'])) {
   $userLogged = $_SESSION['userLogged'];
 } else {
@@ -22,6 +26,9 @@ if (isset($_SESSION['userLogged'])) {
   <link href="assets/css/app.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </head>
 
 <body>

@@ -1,3 +1,41 @@
+<?php
+$songQuery = mysqli_query($con, 'SELECT id FROM songs ORDER BY RAND() LIMIT 10');
+$resultArray = array();
+while ($row = mysqli_fetch_array($songQuery)) {
+  array_push($resultArray, $row['id']);
+}
+$jsonArray = json_encode($resultArray);
+?>
+
+<script>
+  $(function() {
+    currentPlaylist = <?php echo $jsonArray ?>;
+    audioElement = new Audio();
+    setTrack(currentPlaylist[0], currentPlaylist, false);
+  });
+
+  function setTrack(trackId, newPlaylist, play) {
+    $.post('includes/handler/ajax/getSong.php', {
+      songId: trackId
+    }, function(data) {
+      var track = JSON.parse(data);
+      audioElement.setTrack(track.path);
+      audioElement.play();
+    });
+    if (play) {
+      audioElement.play();
+    }
+  }
+
+  function playSong() {
+    audioElement.play();
+  }
+
+  function pauseSong() {
+    audioElement.pause();
+  }
+</script>
+
 <div id="play" class="row justify-content-center m-auto">
   <div class="card w-100">
     <div class="container-fluid">
