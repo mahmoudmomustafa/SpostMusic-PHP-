@@ -11,7 +11,7 @@
               <?php
               $albumsQuery = mysqli_query($con, 'SELECT * FROM albums ORDER BY RAND()');
               while ($row = mysqli_fetch_array($albumsQuery)) {
-                echo '<div class="card mx-2" style="width: 10rem;"><a href="album.php?' . $row['id'] . '"><img src="' . $row['artPath'] . '" alt="" class="img-thumbnail" data-toggle="tooltip" data-placement="right" title="' . $row['title'] . '"></a><div class="card-body p-2"><p class="card-text">' . $row['title'] . '</p></div></div>';
+                echo '<div class="card mx-2 h-100 album" style="width: 10rem;"><a href="album.php?' . $row['id'] . '"><img src="' . $row['artPath'] . '" alt="" class="img-thumbnail" data-toggle="tooltip" data-placement="right" title="' . $row['title'] . '"></a><div class="card-body p-2 d-none"><p class="card-text">' . $row['title'] . '</p></div></div>';
               }
               ?>
             </div>

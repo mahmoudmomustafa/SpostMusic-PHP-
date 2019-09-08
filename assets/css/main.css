@@ -35,7 +35,13 @@ body {
 .navbar .right-div .nav .nav-item .nav-link {
   color: rgb(238, 238, 238) !important
 }
-
+/* index */
+.album{
+  transition: 500ms ease;
+}
+.album:hover{
+  transform: scale(.8);
+}
 /* playnow */
 #play {
   position: fixed;

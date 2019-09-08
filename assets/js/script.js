@@ -4,6 +4,13 @@ $(document).ready(function () {
         $('#setting-page .card .card-body .setting-side .nav-item').removeClass('active');
         $(this).addClass('active');
     });
+    // index
+    $('.album').on('mouseover',function(){
+        $(this).find( ".card-body" ).removeClass('d-none');
+    });
+    $('.album').on('mouseleave',function(){
+        $(this).find( ".card-body" ).addClass('d-none');
+    });
     //now playing functions
     //play & pause
     $('#play .card .card-body .center .play-navigate .playing').on('click', function () {

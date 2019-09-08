@@ -37,7 +37,7 @@ $jsonArray = json_encode($resultArray);
 </script>
 
 <div id="play" class="row justify-content-center m-auto">
-  <div class="card w-100">
+  <div class="card w-100" style="background:#101419fa">
     <div class="container-fluid">
       <div class="card-body d-flex p-3">
         <!-- {{-- title & desc --}} -->
