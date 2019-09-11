@@ -5,13 +5,20 @@ $(document).ready(function () {
         $(this).addClass('active');
     });
     // index
-    $('.album').on('mouseover',function(){
-        $(this).find( ".card-body" ).removeClass('d-none');
+    $('.album').on('mouseover', function () {
+        $(this).find(".card-body").removeClass('d-none');
     });
-    $('.album').on('mouseleave',function(){
-        $(this).find( ".card-body" ).addClass('d-none');
+    $('.album').on('mouseleave', function () {
+        $(this).find(".card-body").addClass('d-none');
     });
     //now playing functions
+    if ($('#play .card .card-body .center .play-navigate .playing img').attr('src') == 'assets/img/nowPlaying/play-button.svg') {
+        $('#play .card .card-body .center .play-navigate .playing img').attr('src', 'assets/img/nowPlaying/pause.svg');
+        $(this).attr('onclick', 'pauseSong()');
+    } else {
+        $('#play .card .card-body .center .play-navigate .playing img').attr('src', 'assets/img/nowPlaying/play-button.svg');
+        $(this).attr('onclick', 'playSong()');
+    }
     //play & pause
     $('#play .card .card-body .center .play-navigate .playing').on('click', function () {
         if ($('#play .card .card-body .center .play-navigate .playing img').attr('src') == 'assets/img/nowPlaying/play-button.svg') {
@@ -38,12 +45,22 @@ $(document).ready(function () {
 
 var currentPlaying = [];
 var audioElement;
-
+function formatTime(seconds){
+    var time = Math.round(seconds);
+    var min = Math.floor(time / 60);
+    var seconds = time - (min * 60);
+    var extraXero = (seconds < 10) ? '0' : '';
+    return `${min} : ${extraXero} ${seconds}`;
+}
 function Audio() {
     this.currentPlaying;
     this.audio = document.createElement('audio');
-    this.setTrack = function (src) {
-        this.audio.src = src;
+    this.audio.addEventListener('canplay',function(){
+        $('.song-remaining').text(formatTime(this.duration));
+    })
+    this.setTrack = function (track) {
+        this.currentlyPlaying = track;
+        this.audio.src = track.path;
     };
     // play function
     this.play = function () {

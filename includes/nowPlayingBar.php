@@ -15,12 +15,25 @@ $jsonArray = json_encode($resultArray);
   });
 
   function setTrack(trackId, newPlaylist, play) {
+    // get song ajax
     $.post('includes/handler/ajax/getSong.php', {
       songId: trackId
     }, function(data) {
       var track = JSON.parse(data);
-      audioElement.setTrack(track.path);
-      audioElement.play();
+
+      $('.song-title').text(track.title);
+      // get artist
+      $.post('includes/handler/ajax/getArtist.php', {artistId: track.artist},function(data){
+        var track = JSON.parse(data);
+        $('.song-artist small').text(track.name);
+      });
+      // get album
+      $.post('includes/handler/ajax/getAlbum.php', {albumId: track.album},function(data){
+        var track = JSON.parse(data);
+        $('.song-album').attr('src',track.artPath);
+      });
+      audioElement.setTrack(track);
+      playSong();
     });
     if (play) {
       audioElement.play();
@@ -28,6 +41,9 @@ $jsonArray = json_encode($resultArray);
   }
 
   function playSong() {
+    if(audioElement.audio.currentTime == 0){
+      $.post('includes/handler/ajax/updatePlays.php', {songId: audioElement.currentlyPlaying.id});
+    }
     audioElement.play();
   }
 
@@ -45,12 +61,12 @@ $jsonArray = json_encode($resultArray);
           <div class="card mx-3 d-none d-lg-block d-xl-block" style="max-width:250px;font-family:'Dosis',sans-serif">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="assets/img/music_girl.png" class="card-img img-thumbnail" alt="Responsive image">
+                <img src="" class="card-img img-thumbnail song-album" alt="Responsive image">
               </div>
               <div class="col-md-8">
                 <div class="card-body p-1 px-4">
-                  <h5 class="card-title">Song title</h5>
-                  <p class="card-text">Artist <small class="text-muted"></small></p>
+                  <h5 class="card-title song-title"></h5>
+                  <p class="card-text song-artist"><small class="text-muted"></small></p>
                 </div>
               </div>
             </div>
@@ -80,7 +96,7 @@ $jsonArray = json_encode($resultArray);
             <div class="progress">
               <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <span style="color:#adadad"><small class="text-muted">0.00</small></span>
+            <span style="color:#adadad"><small class="text-muted song-remaining"></small></span>
           </div>
         </div>
         <!-- {{-- sound & mute --}} -->
