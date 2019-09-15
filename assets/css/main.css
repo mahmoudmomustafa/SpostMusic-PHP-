@@ -7,14 +7,17 @@
 
 body {
   color: whitesmoke;
-  background: linear-gradient(45deg, #111111, #2c3d4f);
+  /* background: linear-gradient(45deg, #111111, #2c3d4f); */
+  background-image: url('../img/15505.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: left;
 }
 
 /* navbar */
 .navbar {
   font-family: 'Acme', sans-serif;
+  transition: 500ms ease;
 }
 
 .navbar .navbar-brand {
@@ -29,19 +32,39 @@ body {
 
 .navbar .navbar-brand:hover span {
   opacity: 1;
-  color: rgb(146, 14, 40);
+  color: #d7227a;
+}
+
+.search-icon {
+  top: 17%;
+  left: 3%;
+}
+
+.search-input,
+.search-input:focus,
+.search-input:active {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  max-width: 500px;
+  min-width: 300px;
+  padding-left: 30px;
+  color: rgb(202, 202, 202)
 }
 
 .navbar .right-div .nav .nav-item .nav-link {
   color: rgb(238, 238, 238) !important
 }
+
 /* index */
-.album{
+.album {
   transition: 500ms ease;
 }
-.album:hover{
+
+.album:hover {
   transform: scale(.8);
 }
+
 /* playnow */
 #play {
   position: fixed;
@@ -89,8 +112,8 @@ body {
 
 #play .card .card-body .center .play-progress .progress,
 #play .card .card-body .right .progress {
-  width: -webkit-fill-available;
-  margin: 8px 15px;
+  width: 100%;
+  margin: 0px 10px;
   height: 5px;
   background: #283747
 }
@@ -102,10 +125,14 @@ body {
 
 #play .card .card-body .right {
   display: inline-flex;
-  flex-grow: .5;
+  flex-grow: .1;
 }
 
-#play .card .card-body .right .progress {
-  width: calc(2vw + 70px);
-  margin: auto 1px;
+#play .info-card{
+  background: transparent;
+  border: 0
+}
+
+#play button{
+  outline: none
 }

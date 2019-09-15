@@ -33,12 +33,15 @@ $(document).ready(function () {
     $('#play .card .card-body .right .sound').on('click', function () {
         if ($('#play .card .card-body .right .sound img').attr('src') == 'assets/img/nowPlaying/speaker.svg') {
             // change icon
+            audioElement.audio.muted = true;
             $('#play .card .card-body .right .sound img').attr('src', 'assets/img/nowPlaying/mute.svg');
             //change bar
-            $('#play .card .card-body .right .progress .progress-bar').css('width', '0');
+            // $('#play .card .card-body .right .progress .progress-bar').css('width', '0');
         } else {
+            audioElement.audio.muted = false;
+
             $('#play .card .card-body .right .sound img').attr('src', 'assets/img/nowPlaying/speaker.svg');
-            $('#play .card .card-body .right .progress .progress-bar').css('width', '100%');
+            // $('#play .card .card-body .right .progress .progress-bar').css('width', '100%');
         }
     });
 });
@@ -58,7 +61,7 @@ function updateTimeProgressBar(audio){
     $('.song-remaining').text(formatTime(audio.duration - audio.currentTime));
 
     var progress = audio.currentTime / audio.duration * 100;
-    $('.song-prog').css('width',progress);
+    $('.song-prog').css('width',progress+'%');
 }
 function Audio() {
     this.currentPlaying;

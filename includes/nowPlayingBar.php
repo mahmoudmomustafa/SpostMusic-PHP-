@@ -55,17 +55,17 @@ $jsonArray = json_encode($resultArray);
 <div id="play" class="row justify-content-center m-auto">
   <div class="card w-100" style="background:#101419fa">
     <div class="container-fluid">
-      <div class="card-body d-flex p-3">
+      <div class="card-body d-flex p-1">
         <!-- {{-- title & desc --}} -->
-        <div class="left">
-          <div class="card mx-3 d-none d-lg-block d-xl-block" style="max-width:250px;font-family:'Dosis',sans-serif">
+        <div class="left mt-1">
+          <div class="card mx-3 d-none d-lg-block d-xl-block info-card shadow" style="max-width:225px;font-family:'Dosis',sans-serif">
             <div class="row no-gutters">
               <div class="col-md-4">
                 <img src="" class="card-img img-thumbnail song-album" alt="Responsive image">
               </div>
               <div class="col-md-8">
-                <div class="card-body p-1 px-4">
-                  <h5 class="card-title song-title"></h5>
+                <div class="card-body p-1 pl-3">
+                  <h6 class="card-title song-title"></h6>
                   <p class="card-text song-artist"><small class="text-muted"></small></p>
                 </div>
               </div>
@@ -73,40 +73,40 @@ $jsonArray = json_encode($resultArray);
           </div>
         </div>
         <!-- {{-- now playing --}} -->
-        <div class="center">
-          <div class="play-navigate d-flex justify-content-center">
+        <div class="center d-flex">
+          <div class="play-navigate d-flex m-3 align-items-center">
             <button class="shuffle">
-              <img src="assets/img/nowPlaying/shuffle.svg" style="width:calc(0.5vw + 15px)">
+              <img src="assets/img/nowPlaying/shuffle.svg" style="width:calc(0.5vw + 8px)">
             </button>
             <button class="back">
-              <img src="assets/img/nowPlaying/back.svg" style="width:calc(0.5vw + 15px)">
+              <img src="assets/img/nowPlaying/back.svg" style="width:calc(0.5vw + 8px)">
             </button>
-            <button style="padding:5px" class="playing" onclick="pauseSong()">
-              <img src="assets/img/nowPlaying/play-button.svg" style="width:calc(1.5vw + 15px)">
+            <button class="playing p-1" onclick="pauseSong()">
+              <img src="assets/img/nowPlaying/play-button.svg" style="width:calc(1.5vw + 8px)">
             </button>
             <button class="next">
-              <img src="assets/img/nowPlaying/next.svg" style="width:calc(0.5vw + 15px)">
+              <img src="assets/img/nowPlaying/next.svg" style="width:calc(0.5vw + 8px)">
             </button>
             <button class="return">
-              <img src="assets/img/nowPlaying/return.svg" style="width:calc(0.5vw + 15px)">
+              <img src="assets/img/nowPlaying/return.svg" style="width:calc(0.5vw + 8px)">
             </button>
           </div>
-          <div class="play-progress d-flex mx-2">
-            <span style="color:#adadad"><small class="text-muted song-progress"></small></span>
+          <div class="play-progress d-flex m-3 align-items-center w-100">
+            <span class="text-muted song-progress"style="width:6%;font-size:10px;">0 : 0 0</span>
             <div class="progress">
-              <div class="song-prog progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="song-prog progress-bar progress-bar-striped bg-danger" role="progressbar" style="width:0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-            <span style="color:#adadad"><small class="text-muted song-remaining"></small></span>
+            <span class="text-muted song-remaining" style="width:6%;font-size:10px;"></span>
           </div>
         </div>
         <!-- {{-- sound & mute --}} -->
-        <div class="right">
-          <button class="sound" style="height: 40px;margin: auto 1px;">
-            <img src="assets/img/nowPlaying/speaker.svg" width="25px" height="25px">
+        <div class="right align-items-center">
+          <button class="sound p-2">
+            <img src="assets/img/nowPlaying/speaker.svg" width="20px" height="20px">
           </button>
-          <div class="progress">
+          <!-- <div class="progress">
             <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
