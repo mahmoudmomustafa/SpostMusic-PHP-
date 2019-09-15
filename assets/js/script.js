@@ -52,11 +52,24 @@ function formatTime(seconds){
     var extraXero = (seconds < 10) ? '0' : '';
     return `${min} : ${extraXero} ${seconds}`;
 }
+
+function updateTimeProgressBar(audio){
+    $('.song-progress').text(formatTime(audio.currentTime));
+    $('.song-remaining').text(formatTime(audio.duration - audio.currentTime));
+
+    var progress = audio.currentTime / audio.duration * 100;
+    $('.song-prog').css('width',progress);
+}
 function Audio() {
     this.currentPlaying;
     this.audio = document.createElement('audio');
     this.audio.addEventListener('canplay',function(){
         $('.song-remaining').text(formatTime(this.duration));
+    });
+    this.audio.addEventListener('timeupdate',function(){
+        if(this.duration){
+            updateTimeProgressBar(this);
+        }
     })
     this.setTrack = function (track) {
         this.currentlyPlaying = track;

@@ -23,69 +23,51 @@ include('includes/handler/login-handler.php'); ?>
 
 <body>
   <div id="app">
-    <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg shadow">
-      <div class="container">
-        <!-- navbar brand -->
-        <a class="navbar-brand font-weight-bold" href="/"><i class="lni-music size-xs pr-1"></i>SPOT<span>Music</span></a>
-        <!-- nav side -->
-        <div class="right-div" id="right-nav">
-          <ul class="nav ml-auto justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link text-secondary" href="/projects/SpotMusic/login.php">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-secondary" href="/projects/SpotMusic/register.php">Register</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <!-- main content -->
-    <main class="py-4">
+    <main class="py-4 h-100 mt-5 m-3 d-flex justify-content-center align-items-center">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 my-5">
-            <div class="img position-relative w-100">
-              <img src="assets/img/log2.svg" class="img-fluid" alt="Responsive image">
-              <div class="headings">
-                <h1 class="p-3 rounded fade-out">
-                  Welcome To <span class="font-weight-bold text-primary brand"><i class="lni-music size-md pr-1"></i>Spot<span>Music</span></span>
-                </h1>
-                <h2 class="p-3 rounded fade-out">
-                  Login Or Register Now to listen to your Music<i class="size-sm pl-3 lni-fade-right-effect lni-angle-double-right"></i>
-                </h2>
-              </div>
+        <div class="content row justify-content-center rounded shadow">
+          <div class="col-md-7 py-4">
+            <div class="img position-relative h-100 d-flex flex-column text-center w-100">
+              <h1 class="p-3 rounded">
+                <span class="font-weight-bold brand">Spot<span>Music</span></span>
+              </h1>
+              <img src="assets/img/log.svg" class="img-fluid m-auto log-img" alt="Responsive image" width="300" height="80">
+              <p class="p-3 rounded fade-out">
+                Login now to Listen to your Music
+              </p>
             </div>
           </div>
-          <div class="col-md-5 my-lg-5 mt-3">
-            <div class="card h-100 shadow fade-out">
-              <div class="card-header font-weight-bold border-0 p-4">Login</div>
+          <div class="col-md-5 my-lg-5 my-3">
+            <div class="card h-100 fade-out">
+              <div class="card-header font-weight-bold border-0 p-4">
+                <img src="assets/img/login.svg" alt="login" width="50">
+                Login ..</div>
               <div class="card-body">
                 <form method="POST" action="login.php" id="login-form">
                   <!-- email -->
-                  <div class="form-group row mb-3">
-                    <div class="col-md-9 m-auto">
-                      <input id="email" placeholder="E-mail Address" type="email" class="form-control shadow rounded" name="email" required autofocus>
+                  <div class="form-group row mb-4">
+                    <div class="col-md-9 m-auto d-flex">
+                      <img src="assets/img/arroba.svg" alt="login" width="35" class="mr-2 p-1 log">
+                      <input id="email" placeholder="E-mail Address" type="email" class="form-control shadow" name="email" required autofocus>
                     </div>
                   </div>
                   <!--password -->
-                  <div class="form-group row mb-3">
-                    <div class="col-md-9 m-auto">
-                      <input id="password" placeholder="Password" type="password" class="form-control shadow rounded" name="password" required autocomplete="none">
-                      <?php echo $account->getError(Constants::$loginErr) ?>
+                  <div class="form-group row mb-4">
+                    <div class="col-md-9 m-auto d-flex">
+                      <img src="assets/img/fingerprint.svg" alt="login" width="35" class="mr-2 p-1 log">
+                      <input id="password" placeholder="Password" type="password" class="form-control shadow" name="password" required autocomplete="none">
                     </div>
+                    <?php echo $account->getError(Constants::$loginErr) ?>
                   </div>
                   <!-- login submit -->
                   <div class="form-group row mb-3">
-                    <div class="col-md-8 m-auto">
-                      <button type="submit" class="btn btn-primary w-100" name="login-btn">
-                        Login <i class="pl-2 fas fa-sign-in-alt"></i>
+                    <div class="col-md-9 m-auto d-flex">
+                      <button type="submit" class="btn font-weight-bold btn-primary w-100" name="login-btn">
+                        Login
                       </button>
-                      <a class="btn btn-link" href="#" style="color:#E91E63">
-                        Forgot?
-                      </a>
                     </div>
+                    <a href="register.php" class="m-auto pt-2" style="color:#f00942">Or Make new account?</a>
                   </div>
                 </form>
               </div>

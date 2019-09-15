@@ -92,9 +92,9 @@ $jsonArray = json_encode($resultArray);
             </button>
           </div>
           <div class="play-progress d-flex mx-2">
-            <span style="color:#adadad"><small class="text-muted">0.00</small></span>
+            <span style="color:#adadad"><small class="text-muted song-progress"></small></span>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="song-prog progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <span style="color:#adadad"><small class="text-muted song-remaining"></small></span>
           </div>
