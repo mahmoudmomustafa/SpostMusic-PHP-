@@ -2,8 +2,11 @@
 <!-- main content -->
 <main class="py-4">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="header">
+          <!-- <img src="assets/img/misc.gif" alt="head" class="w-100"> -->
+        </div>
         <div class="card">
           <div class="card-header">Songs U may like</div>
           <div class="card-body">
@@ -15,6 +18,13 @@
               }
               ?>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="container">
+          <div class="popular-song">
+            Popular Song..
           </div>
         </div>
       </div>

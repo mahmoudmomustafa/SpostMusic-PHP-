@@ -111,8 +111,8 @@ $jsonArray = json_encode($resultArray);
                 <img src="" class="card-img img-thumbnail song-album" alt="Responsive image">
               </div>
               <div class="col-md-8">
-                <div class="card-body p-1 pl-3">
-                  <h6 class="card-title song-title"></h6>
+                <div class="card-body p-1 pl-3 mt-1">
+                  <h6 class="card-title song-title m-0"></h6>
                   <p class="card-text song-artist"><small class="text-muted"></small></p>
                 </div>
               </div>
