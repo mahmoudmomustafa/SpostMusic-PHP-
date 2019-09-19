@@ -101,13 +101,16 @@ body {
   border: none;
   margin: 0 5px;
   cursor: pointer;
+  transition: 500ms ease-in-out;
 }
 
 #play .card .card-body .left button:hover,
 #play .card .card-body .center button:hover,
 #play .card .card-body .right button:hover {
-  background-color: #161b21;
+  background-color: #001027fa;
   border-radius: 5px;
+  box-shadow: 0 0 2px #011c42fa;
+  transform: scale(1.1);
 }
 
 #play .card .card-body .center .play-progress .progress,
@@ -115,7 +118,8 @@ body {
   width: 100%;
   margin: 0px 10px;
   height: 5px;
-  background: #283747
+  background: #000b1b;
+
 }
 
 #play .card .card-body .center .play-progress .progress .progress-bar,
@@ -130,9 +134,26 @@ body {
 
 #play .info-card{
   background: transparent;
-  border: 0
+  border: 0;
+  transition: 500ms ease;
+}
+#play .info-card:hover{
+  transform: scale(1.02);
 }
 
 #play button{
   outline: none
+}
+
+.repeat{
+  animation: repeat 2500ms ease infinite ;
+}
+
+@keyframes repeat{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
 }

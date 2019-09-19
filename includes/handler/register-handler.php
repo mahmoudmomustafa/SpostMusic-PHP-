@@ -8,6 +8,7 @@ if (isset($_POST['register-btn'])) {
   $reg_success = $account->register($name, $email, $password, $rePassword);
 
   if ($reg_success) {
+    session_start();
     $_SESSION['userLogged'] = $name;
     header('Location: index.php');
   }

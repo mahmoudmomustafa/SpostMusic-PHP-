@@ -32,23 +32,22 @@ $(document).ready(function () {
     //mute & unmute
     $('#play .card .card-body .right .sound').on('click', function () {
         if ($('#play .card .card-body .right .sound img').attr('src') == 'assets/img/nowPlaying/speaker.svg') {
-            // change icon
             audioElement.audio.muted = true;
             $('#play .card .card-body .right .sound img').attr('src', 'assets/img/nowPlaying/mute.svg');
-            //change bar
-            // $('#play .card .card-body .right .progress .progress-bar').css('width', '0');
         } else {
             audioElement.audio.muted = false;
-
             $('#play .card .card-body .right .sound img').attr('src', 'assets/img/nowPlaying/speaker.svg');
-            // $('#play .card .card-body .right .progress .progress-bar').css('width', '100%');
         }
     });
 });
 
 var currentPlaying = [];
 var audioElement;
-function formatTime(seconds){
+var currentIndex = 0;
+var repeat = false;
+var shuffle = false;
+
+function formatTime(seconds) {
     var time = Math.round(seconds);
     var min = Math.floor(time / 60);
     var seconds = time - (min * 60);
@@ -56,21 +55,25 @@ function formatTime(seconds){
     return `${min} : ${extraXero} ${seconds}`;
 }
 
-function updateTimeProgressBar(audio){
+function updateTimeProgressBar(audio) {
     $('.song-progress').text(formatTime(audio.currentTime));
     $('.song-remaining').text(formatTime(audio.duration - audio.currentTime));
 
     var progress = audio.currentTime / audio.duration * 100;
-    $('.song-prog').css('width',progress+'%');
+    $('.song-prog').css('width', progress + '%');
 }
+
 function Audio() {
     this.currentPlaying;
     this.audio = document.createElement('audio');
-    this.audio.addEventListener('canplay',function(){
+    this.audio.addEventListener('canplay', function () {
         $('.song-remaining').text(formatTime(this.duration));
     });
-    this.audio.addEventListener('timeupdate',function(){
-        if(this.duration){
+    this.audio.addEventListener('ended',function() {
+        nextSong();
+    })
+    this.audio.addEventListener('timeupdate', function () {
+        if (this.duration) {
             updateTimeProgressBar(this);
         }
     })

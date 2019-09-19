@@ -6,6 +6,7 @@ if (isset($_POST['login-btn'])) {
   $log_success = $account->login($email, $password);
 
   if ($log_success) {
+    session_start();
     $_SESSION['userLogged'] = $email;
     header('Location: index.php');
   }

@@ -14,23 +14,68 @@ $jsonArray = json_encode($resultArray);
     setTrack(currentPlaylist[0], currentPlaylist, false);
   });
 
+  // function prevSong() {
+  //   if (audioElement.audio.currentTime =3 || currentIndex = 0) {
+  //     audioElement.audio.currentTime = 0;
+  //   } else {
+  //     currentIndex--
+  //   }
+
+  //   var trackToPlay = currentPlaylist[currentIndex];
+  //   setTrack(trackToPlay, currentPlaylist, true)
+  // }
+
+  function nextSong() {
+    if (repeat == true) {
+      audioElement.audio.currentTime = 0;
+      playSong();
+      return;
+    }
+
+    if (currentIndex == currentPlaylist.length - 1) {
+      currentIndex = 0
+    } else {
+      currentIndex++
+    }
+
+    var trackToPlay = currentPlaylist[currentIndex];
+    setTrack(trackToPlay, currentPlaylist, true)
+  }
+
+  function repeatSong() {
+    repeat =! repeat;
+    repeat ? $('.return').addClass('repeat') : $('.return').removeClass('repeat');
+  }
+  // function suffleSong() {
+  //   shuffle =! suffle;
+    
+  //   if(shuffle){
+
+  //   }
+  // }
   function setTrack(trackId, newPlaylist, play) {
+    currentIndex = currentPlaylist.indexOf(trackId);
+    pauseSong();
     // get song ajax
     $.post('includes/handler/ajax/getSong.php', {
       songId: trackId
     }, function(data) {
-      var track = JSON.parse(data);
 
+      var track = JSON.parse(data);
       $('.song-title').text(track.title);
       // get artist
-      $.post('includes/handler/ajax/getArtist.php', {artistId: track.artist},function(data){
+      $.post('includes/handler/ajax/getArtist.php', {
+        artistId: track.artist
+      }, function(data) {
         var track = JSON.parse(data);
         $('.song-artist small').text(track.name);
       });
       // get album
-      $.post('includes/handler/ajax/getAlbum.php', {albumId: track.album},function(data){
+      $.post('includes/handler/ajax/getAlbum.php', {
+        albumId: track.album
+      }, function(data) {
         var track = JSON.parse(data);
-        $('.song-album').attr('src',track.artPath);
+        $('.song-album').attr('src', track.artPath);
       });
       audioElement.setTrack(track);
       playSong();
@@ -41,8 +86,10 @@ $jsonArray = json_encode($resultArray);
   }
 
   function playSong() {
-    if(audioElement.audio.currentTime == 0){
-      $.post('includes/handler/ajax/updatePlays.php', {songId: audioElement.currentlyPlaying.id});
+    if (audioElement.audio.currentTime == 0) {
+      $.post('includes/handler/ajax/updatePlays.php', {
+        songId: audioElement.currentlyPlaying.id
+      });
     }
     audioElement.play();
   }
@@ -53,7 +100,7 @@ $jsonArray = json_encode($resultArray);
 </script>
 
 <div id="play" class="row justify-content-center m-auto">
-  <div class="card w-100" style="background:#101419fa">
+  <div class="card w-100" style="background:#001027fa">
     <div class="container-fluid">
       <div class="card-body d-flex p-1">
         <!-- {{-- title & desc --}} -->
@@ -75,24 +122,24 @@ $jsonArray = json_encode($resultArray);
         <!-- {{-- now playing --}} -->
         <div class="center d-flex">
           <div class="play-navigate d-flex m-3 align-items-center">
-            <button class="shuffle">
+            <button class="shuffle" data-toggle="tooltip" data-placement="left" title="Shuffle">
               <img src="assets/img/nowPlaying/shuffle.svg" style="width:calc(0.5vw + 8px)">
             </button>
-            <button class="back">
+            <button class="back" data-toggle="tooltip" data-placement="left" title="Back" onclick="prevSong()">
               <img src="assets/img/nowPlaying/back.svg" style="width:calc(0.5vw + 8px)">
             </button>
-            <button class="playing p-1" onclick="pauseSong()">
+            <button class="playing p-1" onclick="pauseSong()" data-toggle="tooltip" data-placement="left" title="Play/Pause">
               <img src="assets/img/nowPlaying/play-button.svg" style="width:calc(1.5vw + 8px)">
             </button>
-            <button class="next">
+            <button class="next" data-toggle="tooltip" data-placement="left" title="Next" onclick="nextSong()">
               <img src="assets/img/nowPlaying/next.svg" style="width:calc(0.5vw + 8px)">
             </button>
-            <button class="return">
+            <button class="return" data-toggle="tooltip" data-placement="left" title="Repeat" onclick="repeatSong()">
               <img src="assets/img/nowPlaying/return.svg" style="width:calc(0.5vw + 8px)">
             </button>
           </div>
           <div class="play-progress d-flex m-3 align-items-center w-100">
-            <span class="text-muted song-progress"style="width:6%;font-size:10px;">0 : 0 0</span>
+            <span class="text-muted song-progress" style="width:6%;font-size:10px;">0 : 0 0</span>
             <div class="progress">
               <div class="song-prog progress-bar progress-bar-striped bg-danger" role="progressbar" style="width:0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
@@ -101,7 +148,7 @@ $jsonArray = json_encode($resultArray);
         </div>
         <!-- {{-- sound & mute --}} -->
         <div class="right align-items-center">
-          <button class="sound p-2">
+          <button class="sound p-2" data-toggle="tooltip" data-placement="left" title="Sound">
             <img src="assets/img/nowPlaying/speaker.svg" width="20px" height="20px">
           </button>
           <!-- <div class="progress">
