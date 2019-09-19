@@ -44,8 +44,8 @@ body {
 /* //sidebar// */
 .side-nav {
   position: fixed;
-  /* background: #000d1f; */
-  background: linear-gradient(45deg, #000d1f, transparent);
+  background: #000d1f;
+  /* background: linear-gradient(45deg, #000d1f, transparent); */
   width: 17%;
   height: 160vh;
 }
@@ -73,12 +73,38 @@ body {
   border-radius: 3px;
   transition: 500ms ease;
 }
-.side-list:hover{
+
+.side-list:hover {
   background: #000814;
   color: white;
   box-shadow: 0 0 5px #000b1b
 }
+
 /* index */
+main .header {
+  height: 180px;
+  background-image: url('../img/misc.gif');
+  background-position: center;
+  background-size: cover;
+}
+.card{
+  background: linear-gradient(45deg, #000d1f, transparent);;
+  border: none;
+}
+.card .card-header {
+  color: #d7227a;
+  background: transparent
+}
+.card li.list-group-item{
+  background: #00081440;
+  border: 0;
+  font-size: 12px;
+  margin-bottom: 2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #b6b6b6fa
+}
 .album {
   transition: 500ms ease;
 }

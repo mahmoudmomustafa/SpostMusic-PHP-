@@ -3,9 +3,9 @@
 <main class="py-4">
   <div class="container">
     <div class="row">
-      <div class="col-md-9">
-        <div class="header">
-          <!-- <img src="assets/img/misc.gif" alt="head" class="w-100"> -->
+      <div class="col-md-9 p-3">
+        <!-- main header -->
+        <div class="header mb-3 rounded mx-4">
         </div>
         <div class="card">
           <div class="card-header">Songs U may like</div>
@@ -23,8 +23,41 @@
       </div>
       <div class="col-md-3">
         <div class="container">
-          <div class="popular-song">
-            Popular Song..
+          <div class="popular-song mb-2">
+            <div class="card">
+              <div class="card-header font-weight-bold">
+                Popular Songs
+              </div>
+              <ul class="list-group list-group-flush shadow">
+                <li class="list-group-item font-weight-bold rounded">
+                  <img src="assets/img/music_girl.png" alt="album-pic" width="40px" class="rounded mr-2"> Bla blaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </li>
+                <li class="list-group-item font-weight-bold rounded">
+                  <img src="assets/img/music_girl.png" alt="album-pic" width="40px" class="rounded mr-2"> Bla bla
+                </li>
+                <li class="list-group-item font-weight-bold rounded">
+                  <img src="assets/img/music_girl.png" alt="album-pic" width="40px" class="rounded mr-2"> Bla bla
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="recently-play mt-2">
+            <div class="card">
+              <div class="card-header font-weight-bold">
+                Recently Plays
+              </div>
+              <ul class="list-group list-group-flush shadow">
+                <li class="list-group-item font-weight-bold rounded">
+                  <img src="assets/img/music_girl.png" alt="album-pic" width="40px" class="rounded mr-2"> Bla bla
+                </li>
+                <li class="list-group-item font-weight-bold rounded">
+                  <img src="assets/img/music_girl.png" alt="album-pic" width="40px" class="rounded mr-2"> Bla bla
+                </li>
+                <li class="list-group-item font-weight-bold rounded">
+                  <img src="assets/img/music_girl.png" alt="album-pic" width="40px" class="rounded mr-2"> Bla bla
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
