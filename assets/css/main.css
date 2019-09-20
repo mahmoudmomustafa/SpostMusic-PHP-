@@ -44,14 +44,15 @@ body {
 /* //sidebar// */
 .side-nav {
   position: fixed;
-  background: #000d1f;
-  /* background: linear-gradient(45deg, #000d1f, transparent); */
+  /* background: #000d1f; */
+  background: linear-gradient(45deg, #000d1f, transparent);
   width: 17%;
   height: 160vh;
 }
 
 .side-nav .navbar-brand {
   font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
 }
 
 .side-nav .navbar-brand span {
@@ -71,10 +72,12 @@ body {
   margin-bottom: .5rem;
   font-family: 'Acme', sans-serif;
   border-radius: 3px;
-  transition: 500ms ease;
+  transition: 700ms ease;
+  clip-path: circle(100% at 10% 10%);
 }
 
 .side-list:hover {
+  clip-path: circle(75%);
   background: #000814;
   color: white;
   box-shadow: 0 0 5px #000b1b
@@ -92,18 +95,29 @@ main .header {
   border: none;
 }
 .card .card-header {
-  color: #d7227a;
-  background: transparent
+  color: rgb(192, 192, 192);
+  background: transparent;
+  border: 0
 }
 .card li.list-group-item{
-  background: #00081440;
+  background: #00081400;
   border: 0;
   font-size: 12px;
   margin-bottom: 2px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: #b6b6b6fa
+  color: #b6b6b6fa;
+  clip-path: circle(80% at 10% 10%);
+  transition: 500ms ease;
+  overflow: auto;
+}
+.card li.list-group-item:hover{
+  clip-path: circle(75%);
+  background: #00081481;
+}
+.songs-may-like{
+  background: transparent;
 }
 .album {
   transition: 500ms ease;

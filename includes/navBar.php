@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg shadow">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
     <!-- nav side -->
     <ul class="nav mr-auto">
