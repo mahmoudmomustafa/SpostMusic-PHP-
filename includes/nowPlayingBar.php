@@ -26,6 +26,7 @@ $jsonArray = json_encode($resultArray);
   // }
 
   function nextSong() {
+    console.log(currentIndex);
     if (repeat == true) {
       audioElement.audio.currentTime = 0;
       playSong();
@@ -35,24 +36,19 @@ $jsonArray = json_encode($resultArray);
     if (currentIndex == currentPlaylist.length - 1) {
       currentIndex = 0
     } else {
-      currentIndex++
+      currentIndex++;
     }
 
     var trackToPlay = currentPlaylist[currentIndex];
-    setTrack(trackToPlay, currentPlaylist, true)
+    setTrack(trackToPlay, currentPlaylist, true);
+    console.log(currentIndex);
   }
 
   function repeatSong() {
     repeat = !repeat;
     repeat ? $('.return').addClass('repeat') : $('.return').removeClass('repeat');
   }
-  // function suffleSong() {
-  //   shuffle =! suffle;
 
-  //   if(shuffle){
-
-  //   }
-  // }
   function setTrack(trackId, newPlaylist, play) {
     currentIndex = currentPlaylist.indexOf(trackId);
     pauseSong();

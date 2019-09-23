@@ -31,7 +31,10 @@ class Song
     $this->plays = $song['plays'];
     $this->addedAt = $song['added_at'];
   }
-
+  public function id()
+  {
+    return $this->id;
+  }
   public function title()
   {
     return $this->title;

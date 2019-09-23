@@ -1,10 +1,10 @@
 <?php include('includes/header.php');
 if (isset($_GET['id'])) {
-  $albumId = $_GET['id'];
+  $artistId = $_GET['id'];
 } else {
   header('Location: index.php');
 }
-$album = new Album($con, $albumId);
+$artist = new Artist($con, $artistId);
 ?>
 <!-- main content -->
 <main class="py-4">
@@ -16,13 +16,11 @@ $album = new Album($con, $albumId);
           <div class="card mb-3">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="<?php echo $album->artPath(); ?>" class="card-img" alt="...">
+                <img src="" class="card-img" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title"><?php echo $album->title(); ?></h5>
-                  <p class="card-text"><?php echo $album->artist()->name(); ?></p>
-                  <p class="card-text"><small class="text-muted"><?php echo $album->getNumberOfSong() ?> Songs</small></p>
+                  <h5 class="card-title"><?php echo $artist->name(); ?></h5>
                 </div>
               </div>
             </div>
@@ -44,14 +42,29 @@ $album = new Album($con, $albumId);
                 </thead>
                 <tbody>
                   <?php
-                  $songs = $album->SongsId();
-                  foreach ($songs as $song) {
-                    $song = new Song($con, $song);
-                    echo '<tr><th scope="row">' . $song->albumOrder() . '<span onclick="setTrack(\'' . $song->id() . '\', tempPlaylist, true)"><i class="lni-play"></i></span></th><th scope="row">' . $song->title() . '</th><th scope="row">' . $song->duration() . '</th><th scope="row" class="text-muted"><small>' . $song->plays() . '<i class="lni-pulse ml-2"></i></small></th></tr>';
+                  $albumsQuery = mysqli_query($con, "SELECT * FROM songs WHERE artist='$artistId' ORDER BY plays desc LIMIT 4");
+                  $i = 0;
+                  while ($row = mysqli_fetch_array($albumsQuery)) {
+                    $i++;
+                    echo '<tr><th scope="row">' . $i . '<span onclick="setTrack(\'' . $row['id'] . '\', tempPlaylist, true)"><i class="lni-play"></i></span></th><th scope="row">' . $row['title'] . '</th><th scope="row">' . $row['duration'] . '</th><th scope="row" class="text-muted"><small>' . $row['plays'] . '<i class="lni-pulse ml-2"></i></small></th></tr>';
                   }
                   ?>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+        <!-- albums -->
+        <div class="card mx-4 songs-may-like">
+          <div class="card-header font-weight-bold ">Albums</div>
+          <div class="card-body">
+            <div class="albums d-flex flex-wrap">
+              <?php
+              $albumsQuery = mysqli_query($con, "SELECT * FROM albums WHERE artist='$artistId'");;
+              while ($row = mysqli_fetch_array($albumsQuery)) {
+                  echo '<div class="card position-relative mx-2 mb-3 h-100 album" style="width: 10rem;"><img src="' . $row['artPath'] . '" alt="" class="img-thumbnail" data-toggle="tooltip" data-placement="right" title="' . $row['title'] . '"><div class="card-body album-card p-2 d-none"><p class="card-text font-weight-bold"><a href="album.php?id=' . $row['id'] . '">' . $row['title'] . '</a></p></div></div>';
+              }
+              ?>
             </div>
           </div>
         </div>

@@ -47,10 +47,11 @@ $(document).ready(function () {
 });
 
 var currentPlaying = [];
+var tempPlaylist = [];
 var audioElement;
 var currentIndex = 0;
 var repeat = false;
-var shuffle = false;
+// var shuffle = false;
 
 function formatTime(seconds) {
     var time = Math.round(seconds);

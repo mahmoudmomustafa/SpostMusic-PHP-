@@ -22,6 +22,7 @@ class Album
     $this->genre = $album['genre'];
     $this->artPath = $album['artPath'];
   }
+  
   public function title()
   {
     return $this->title;
