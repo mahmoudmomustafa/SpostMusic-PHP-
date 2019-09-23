@@ -1,5 +1,5 @@
 <!-- sidenav -->
-<div class="side-nav p-2 shadow">
+<div class="side-nav p-2 shadow d-none d-md-none d-lg-block">
   <!-- brand icon -->
   <div class="brand mx-2 mb-3">
     <div class="container text-center">

@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    $("body").niceScroll({
+        cursorcolor:"#515151",
+        cursorborder:'0',
+        cursorwidth:'4px'
+    });
     // setting page JS
     $('#setting-page .card .card-body .setting-side .nav-item').click(function () {
         $('#setting-page .card .card-body .setting-side .nav-item').removeClass('active');

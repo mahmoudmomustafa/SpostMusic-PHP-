@@ -43,12 +43,12 @@ $jsonArray = json_encode($resultArray);
   }
 
   function repeatSong() {
-    repeat =! repeat;
+    repeat = !repeat;
     repeat ? $('.return').addClass('repeat') : $('.return').removeClass('repeat');
   }
   // function suffleSong() {
   //   shuffle =! suffle;
-    
+
   //   if(shuffle){
 
   //   }
@@ -79,10 +79,10 @@ $jsonArray = json_encode($resultArray);
       });
       audioElement.setTrack(track);
       playSong();
+      if (play) {
+        audioElement.play();
+      }
     });
-    if (play) {
-      audioElement.play();
-    }
   }
 
   function playSong() {
@@ -100,7 +100,7 @@ $jsonArray = json_encode($resultArray);
 </script>
 
 <div id="play" class="row justify-content-center m-auto">
-  <div class="card w-100" style="background:#001027fa">
+  <div class="card w-100">
     <div class="container-fluid">
       <div class="card-body d-flex p-1">
         <!-- {{-- title & desc --}} -->
@@ -108,7 +108,7 @@ $jsonArray = json_encode($resultArray);
           <div class="card mx-3 d-none d-lg-block d-xl-block info-card shadow" style="max-width:225px;font-family:'Dosis',sans-serif">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="" class="card-img img-thumbnail song-album" alt="Responsive image">
+                <img src="" class="img-thumbnail song-album" alt="Responsive image" width="80%">
               </div>
               <div class="col-md-8">
                 <div class="card-body p-1 pl-3 mt-1">
@@ -122,9 +122,9 @@ $jsonArray = json_encode($resultArray);
         <!-- {{-- now playing --}} -->
         <div class="center d-flex">
           <div class="play-navigate d-flex m-3 align-items-center">
-            <button class="shuffle" data-toggle="tooltip" data-placement="left" title="Shuffle">
+            <!-- <button class="shuffle" data-toggle="tooltip" data-placement="left" title="Shuffle">
               <img src="assets/img/nowPlaying/shuffle.svg" style="width:calc(0.5vw + 8px)">
-            </button>
+            </button> -->
             <button class="back" data-toggle="tooltip" data-placement="left" title="Back" onclick="prevSong()">
               <img src="assets/img/nowPlaying/back.svg" style="width:calc(0.5vw + 8px)">
             </button>
@@ -134,14 +134,14 @@ $jsonArray = json_encode($resultArray);
             <button class="next" data-toggle="tooltip" data-placement="left" title="Next" onclick="nextSong()">
               <img src="assets/img/nowPlaying/next.svg" style="width:calc(0.5vw + 8px)">
             </button>
-            <button class="return" data-toggle="tooltip" data-placement="left" title="Repeat" onclick="repeatSong()">
+            <!-- <button class="return" data-toggle="tooltip" data-placement="left" title="Repeat" onclick="repeatSong()">
               <img src="assets/img/nowPlaying/return.svg" style="width:calc(0.5vw + 8px)">
-            </button>
+            </button> -->
           </div>
           <div class="play-progress d-flex m-3 align-items-center w-100">
             <span class="text-muted song-progress" style="width:6%;font-size:10px;">0 : 0 0</span>
             <div class="progress">
-              <div class="song-prog progress-bar progress-bar-striped bg-danger" role="progressbar" style="width:0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="song-prog progress-bar progress-bar-striped bg-danger rounded" role="progressbar" style="width:0%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <span class="text-muted song-remaining" style="width:6%;font-size:10px;"></span>
           </div>

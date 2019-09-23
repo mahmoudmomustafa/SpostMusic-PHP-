@@ -7,8 +7,8 @@
 
 body {
   color: whitesmoke;
-  /* background: linear-gradient(45deg, #111111, #2c3d4f); */
-  background-image: url('../img/15505.jpg');
+  background: #000011;
+  /* background-image: url('../img/15505.jpg'); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: left;
@@ -85,21 +85,28 @@ body {
 
 /* index */
 main .header {
-  height: 180px;
+  /* height: 180px; */
+  height: 300px;
   background-image: url('../img/misc.gif');
+  background-color: #000011;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-.card{
-  background: linear-gradient(45deg, #000d1f, transparent);;
+
+.card {
+  /* background: linear-gradient(45deg, #000d1f, transparent); */
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   border: none;
 }
+
 .card .card-header {
-  color: rgb(192, 192, 192);
+  color: rgb(95, 95, 95);
   background: transparent;
   border: 0
 }
-.card li.list-group-item{
+
+.card li.list-group-item {
   background: #00081400;
   border: 0;
   font-size: 12px;
@@ -107,26 +114,59 @@ main .header {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  color: #b6b6b6fa;
+  color: #607D8B;
   clip-path: circle(80% at 10% 10%);
   transition: 500ms ease;
   overflow: auto;
 }
-.card li.list-group-item:hover{
+
+.card li.list-group-item:hover {
   clip-path: circle(75%);
-  background: #00081481;
+  background: #0008142e;
 }
-.songs-may-like{
+
+.songs-may-like {
   background: transparent;
+}
+
+.album-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #001027c9;
+}
+.img-thumbnail{
+  background-color: #011326;
+  border:0;
 }
 .album {
   transition: 500ms ease;
 }
-
 .album:hover {
-  transform: scale(.8);
+  transform: scale(1.05);
 }
+/* table */
+.table thead th{
+  border: 0;
+  color: #7e7e7e
+}
+.table tbody tr{
+  margin: 1rem;
+  transition: 500ms linear;
 
+}
+.table tbody tr:hover{
+  /* box-shadow: 0 0 5px #4358fb9a; */
+  /* background-color: #435afb; */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.table tbody tr th{
+  border:0;
+  vertical-align: baseline;
+}
 /* playnow */
 #play {
   position: fixed;
@@ -136,7 +176,8 @@ main .header {
 }
 
 #play .card {
-  width: 100%;
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  /* background: #001027fa */
 }
 
 #play .card .card-body .left .card-title,
@@ -186,7 +227,7 @@ main .header {
 
 #play .card .card-body .center .play-progress .progress .progress-bar,
 #play .card .card-body .right .progress .progress-bar {
-  background: #d7227a !important
+  background: linear-gradient(45deg, #ff006c00, #ff1d70) !important
 }
 
 #play .card .card-body .right {

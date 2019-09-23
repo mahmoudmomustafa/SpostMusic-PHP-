@@ -27,6 +27,7 @@ if (isset($_SESSION['userLogged'])) {
   <link href="assets/css/main.css" rel="stylesheet">
   <!-- scripts -->
   <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/jquery.nicescroll.min.js"></script>
   <script src="assets/js/script.js"></script>
 </head>
 
